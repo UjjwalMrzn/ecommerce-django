@@ -2,7 +2,12 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('' , views.getRoutes , name='routes'),
-    path('products/' , views.getProducts , name='products'),
-    path('products/<str:pk>' , views.getProduct , name='product'),
+    # Route to show available API routes
+    path('', views.getRoutes, name='routes'),
+    
+    # Route to get all products
+    path('products/', views.getProducts, name='products'),
+    
+    # Route to get a single product by its ID
+    path('products/<str:pk>/', views.getProduct, name='product'),
 ]
